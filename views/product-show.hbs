@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <title>Document</title>
+     <!-- CSS only -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    
 </head>
 <body>
-            {{!-- NAVBAR BOOTSTRAP --}}
+      {{!-- NAVBAR BOOTSTRAP --}}
         <nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="/">Pawesome Goggles</a>
@@ -21,7 +22,7 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
-   
+    
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Products
@@ -29,10 +30,10 @@
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="/products">All Products</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/products/new">New Product</a></li>
+            <li><a class="dropdown-item" href="#">New Product</a></li>
           </ul>
         </li>
-       
+      
       </ul>
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -41,19 +42,24 @@
     </div>
   </div>
 </nav>
-    <div class="px-4 py-5 my-5 text-center">
-    <h1 class="display-5 fw-bold">Pawesome Goggles</h1>
-    <div class="col-lg-6 mx-auto">
-      <p class="lead mb-4">Pawesome Goggles are a must-have for outdoor-loving pets! Protect and style your best friend with our latest collection. </p>
-      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-        <a href="/products">    
-        <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Browse Products</button></a>
-        <button type="button" class="btn btn-outline-secondary btn-lg px-4">About Us</button>
-      </div>
-    </div>
-  </div>
+{{!-- Container --}}
+<div class="container">
+    <br />
+    <nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/products">Products</a></li>
+    <li class="breadcrumb-item active" aria-current="page">{{product._id}}</li>
+  </ol>
+</nav>
+<br />
+<img src="{{product.image}}" class="img-fluid" alt="...">
+    <h2>{{product.name}}</h2>
+<h5>{{product.price}}</h5>
+<p>{{product.description}}</p>
 
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</div>
+        
+        <!-- JS only -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 </html>

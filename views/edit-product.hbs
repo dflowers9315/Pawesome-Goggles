@@ -9,7 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
 <body>
-     {{!-- NAVBAR BOOTSTRAP --}}
+    {{!-- NAVBAR BOOTSTRAP --}}
         <nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="/">Pawesome Goggles</a>
@@ -43,35 +43,41 @@
 </nav>
 <div class="container">
 <br />
-<h1>New Product</h1>
-{{!-- Form Tag --}}
-<form action="/products/new" method="post">
+<h1>Edit Product {{product._id}}</h1>
+{{!-- Form Tag --}} 
+<form action="/products/{{product._id}}/edit" method="post">
 
     <div class="row">
 
     <div class="mb-3">
     <label for="exampleFormControlInput1" class="form-label">Product Name</label>
-    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="New Item" name="name">
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="New Item" name="name" value="{{product.name}}">
     </div>
     {{!-- Labels --}}
     <div class="mb-3">
     <label for="exampleFormControlInput2" class="form-label">Price</label>
-    <input type="number" class="form-control" id="exampleFormControlInput2" placeholder="Enter Price" name="price">
+    <input type="number" class="form-control" id="exampleFormControlInput2" placeholder="Enter Price" name="price" value="{{product.price}}">
     </div>
     <div class="mb-3">
     <label for="exampleFormControlInput3" class="form-label">Image URL</label>
-    <input type="text" class="form-control" id="exampleFormControlInput3" placeholder="Image URL" name="image">
+    <input type="text" class="form-control" id="exampleFormControlInput3" placeholder="Image URL" name="image"value="{{product.image}}">
     </div>
     {{!-- Labels --}}
     <div class="mb-3">
     <label for="exampleFormControlTextarea4" class="form-label">Description</label>
-    <textarea class="form-control" id="exampleFormControlTextarea4" rows="3" name="description"></textarea>
+    <textarea class="form-control" id="exampleFormControlTextarea4" rows="3" name="description">{{product.description}}</textarea>
     </div>
     {{!-- Add Item Button --}}
     <div class="mb-3">
         <input type="submit" class="btn btn-primary" value="add item">
     </div>
     </div>
+</form>
+
+{{!-- danger area --}}
+<hr>
+<form action="/products/{{product._id}}/delete" method="post">
+    <input  class='btn btn-danger'type="submit" value="Delete Product">
 </form>
 </div>
     <!-- JS only -->
